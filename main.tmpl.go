@@ -60,6 +60,7 @@ func main() {
 			DisableWindowIcon:    false,
 			// DisableFramelessWindowDecorations: false,
 			WebviewUserDataPath: "",
+			BackdropType:        windows.Acrylic,
 		},
 		// Mac platform specific options
 		Mac: &mac.Options{
