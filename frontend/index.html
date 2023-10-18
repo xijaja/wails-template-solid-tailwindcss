@@ -3,14 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#facc15" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#3730a3" media="(prefers-color-scheme: dark)" />
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
-    <title>Solid App</title>
+    <script nonce="8IBTHwOdqNKAWeKl7plt8g==">
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <title>Wails Solid App</title>
   </head>
-  <body>
+  <body class="select-none text-gray-700 dark:text-white/90" style="--wails-draggable:drag">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
     <script src="/src/index.tsx" type="module"></script>
   </body>
 </html>

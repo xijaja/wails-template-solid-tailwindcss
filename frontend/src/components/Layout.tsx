@@ -48,7 +48,7 @@ export default function Layout(props: Props) {
 
         <div class="pl-2 w-full bg-white dark:bg-gray-900/90">
           <div class="h-8"></div>
-          <div class="select-none overflow-y-auto h-screen p-4" style="--wails-draggable:none;">{props.children}</div>
+          <div class="overflow-y-auto h-screen p-4" style="--wails-draggable:none;">{props.children}</div>
         </div>
       </main>
 
