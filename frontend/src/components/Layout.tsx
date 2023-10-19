@@ -1,8 +1,9 @@
-import {For, JSX} from "solid-js";
+import { For, JSX } from "solid-js";
 import { MetaProvider, Title } from "@solidjs/meta";
 import { Icon } from '@iconify-icon/solid';
 import { A } from "@solidjs/router";
 import DarkMode from "./DarkMode";
+import { WindowMinimise, WindowMaximise, WindowUnmaximise, Quit } from "../../wailsjs/runtime/runtime";
 
 type Props = {
   title?: string; // 页面标题
@@ -10,6 +11,12 @@ type Props = {
 };
 
 export default function Layout(props: Props) {
+  const [isMac, setIsMac] = createSignal(false); // 是否是 Mac 系统
+  const [isMaxWindow, setIsMaxWindow] = createSignal(false); // 窗口是否最大化窗口
+
+  // 获取平台信息
+  onMount(() => setIsMac(navigator.userAgent.toUpperCase().indexOf("MAC") >= 0));
+
   const menu = [
     { text: "首页", href: "/home", icon: "material-symbols:home-app-logo" },
     { text: "用户", href: "/users", icon: "material-symbols:supervisor-account-outline-rounded" },
@@ -47,7 +54,14 @@ export default function Layout(props: Props) {
         </nav>
 
         <div class="pl-2 w-full bg-white dark:bg-gray-900/90">
-          <div class="h-8"></div>
+          {/* windows 定制化窗口按钮 */}
+          <Show when={!isMac()} fallback={<div class="h-8"></div>}>
+            <div class="flex h-10 justify-end flex-0">
+              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => WindowMinimise()}><Icon icon="mdi:window-minimize" /></button>
+              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => isMaxWindow() ? WindowUnmaximise() : setIsMaxWindow(!isMaxWindow()) && WindowMaximise()}><Icon icon="mdi:window-maximize" /></button>
+              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => Quit()}><Icon icon="mdi:window-close" /></button>
+            </div>
+          </Show>
           <div class="overflow-y-auto h-screen p-4" style="--wails-draggable:none;">{props.children}</div>
         </div>
       </main>

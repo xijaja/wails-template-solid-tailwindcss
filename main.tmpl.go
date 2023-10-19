@@ -57,7 +57,7 @@ func main() {
 		Windows: &windows.Options{
 			WebviewIsTransparent: false,
 			WindowIsTranslucent:  false,
-			DisableWindowIcon:    false,
+			DisableWindowIcon:    true,
 			// DisableFramelessWindowDecorations: false,
 			WebviewUserDataPath: "",
 			BackdropType:        windows.Acrylic,
