@@ -44,7 +44,7 @@ func main() {
 		},
 		Menu:             nil,
 		Logger:           nil,
-		LogLevel:         logger.DEBUG,
+		LogLevel:         logger.WARNING,
 		OnStartup:        app.startup,
 		OnDomReady:       app.domReady,
 		OnBeforeClose:    app.beforeClose,

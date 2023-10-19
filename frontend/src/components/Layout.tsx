@@ -57,9 +57,9 @@ export default function Layout(props: Props) {
           {/* windows 定制化窗口按钮 */}
           <Show when={!isMac()} fallback={<div class="h-8"></div>}>
             <div class="flex h-10 justify-end flex-0">
-              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => WindowMinimise()}><Icon icon="mdi:window-minimize" /></button>
-              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => isMaxWindow() ? WindowUnmaximise() : setIsMaxWindow(!isMaxWindow()) && WindowMaximise()}><Icon icon="mdi:window-maximize" /></button>
-              <button class="w-10 h-10 text-xl hover:bg-slate-200" onclick={() => Quit()}><Icon icon="mdi:window-close" /></button>
+              <button class="w-10 h-10 text-xl hover:bg-[#E9E9E9] dark:hover:bg-[#2D2D2D]" onclick={() => WindowMinimise()}><Icon icon="mdi:window-minimize" /></button>
+              <button class="w-10 h-10 text-xl hover:bg-[#E9E9E9] dark:hover:bg-[#2D2D2D]" onclick={() => isMaxWindow() ? WindowUnmaximise() : setIsMaxWindow(!isMaxWindow()) && WindowMaximise()}><Icon icon="mdi:window-maximize" /></button>
+              <button class="w-10 h-10 text-xl hover:bg-[#C13124] dark:hover:bg-[#C13124]" onclick={() => Quit()}><Icon icon="mdi:window-close" /></button>
             </div>
           </Show>
           <div class="overflow-y-auto h-screen p-4" style="--wails-draggable:none;">{props.children}</div>
