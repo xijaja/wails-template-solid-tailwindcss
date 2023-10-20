@@ -12,7 +12,7 @@
 ## Use this template
 
 ```bash
-wails init -n my-wails-solid -t https://github.com/xijaja/wails-template-solid-tailwindcss
+wails init -n my-wails-app -t https://github.com/xijaja/wails-template-solid-tailwindcss
 ```
 
 ## Live Development

@@ -13,7 +13,7 @@
 ## 使用模版
 
 ```bash
-wails init -n my-wails-solid -t https://github.com/xijaja/wails-template-solid-tailwindcss
+wails init -n my-wails-app -t https://github.com/xijaja/wails-template-solid-tailwindcss
 ```
 
 ## 启动调试
