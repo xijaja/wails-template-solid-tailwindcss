@@ -6,6 +6,10 @@
 
 <p align="center">Wails 的模版，开箱即用的 Vite, Solid, TypeScript 并支持热重载</p>
 
+## 预览
+
+![preview](./ui.jpg)
+
 ## 使用模版
 
 ```bash

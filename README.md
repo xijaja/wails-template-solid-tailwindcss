@@ -5,6 +5,10 @@
 
 <p align="center">Wails template which includes: Vite, Solid, TypeScript out of the box</p>
 
+## Preview
+
+![preview](./ui.jpg)
+
 ## Use this template
 
 ```bash
