@@ -10,6 +10,7 @@ export default function SetupPage() {
 
   async function logout() {
     toast("👋 您已退出，再见～");
+    localStorage.removeItem("token"); // 删除本地存储中的 token
     navigate("/login"); // 使用导航钩子, 跳转到登录页
   }
 

@@ -2,6 +2,7 @@
   "name": "{{.ProjectName}}",
   "version": "0.0.0",
   "description": "",
+  "license": "MIT",
   "author": "{{.AuthorName}}",
   "scripts": {
     "start": "vite",
@@ -9,7 +10,6 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
